@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
 
     private EditText totalIncome;
     private Slider rrspContribution;
-    private TextView federalTax, provincialTax, totalTax, afterTaxIncome, rrspContributionTV;
+    private TextView federalTax, provincialTax, totalTax, afterTaxIncome, rrspContributionTV, nextYearRrspLimit;
     private TaxCalculation taxCalculation;
 
     private static final String SHARED_PREFS = "sharedPrefs";
@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
         provincialTax = (TextView) findViewById(R.id.provincialTax);
         totalTax = (TextView) findViewById(R.id.totalTax);
         afterTaxIncome = (TextView) findViewById(R.id.afterTaxIncome);
+        nextYearRrspLimit = (TextView) findViewById(R.id.nextYearRrspLimit);
 
         loadData();
         loadView();
@@ -77,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         provincialTax.setText("$" + String.format("%,.2f", taxCalculation.getProvincialTax()));
         totalTax.setText("$" + String.format("%,.2f", taxCalculation.getTotalTax()));
         afterTaxIncome.setText("$" + String.format("%,.2f", taxCalculation.getAfterTaxIncome()));
+        nextYearRrspLimit.setText("$" + String.format("%,.2f", taxCalculation.getNextYearRrsp()));
     }
 
     protected void saveData() {
@@ -113,5 +115,6 @@ public class MainActivity extends AppCompatActivity {
         provincialTax.setText("$" + String.format("%,.2f", taxCalculation.getProvincialTax()));
         totalTax.setText("$" + String.format("%,.2f", taxCalculation.getTotalTax()));
         afterTaxIncome.setText("$" + String.format("%,.2f", taxCalculation.getAfterTaxIncome()));
+        nextYearRrspLimit.setText("$" + String.format("%,.2f", taxCalculation.getNextYearRrsp()));
     }
 }

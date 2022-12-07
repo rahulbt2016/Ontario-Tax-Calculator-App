@@ -2,6 +2,9 @@ package com.rahul.ontariotaxcalculator;
 
 public class TaxCalculation {
 
+    private static final double RRSP_LIMIT_2022 = 29210;
+    private static final double RRSP_LIMIT_2023 = 30780;
+
     private double income;
     private double rrspContribution;
 
@@ -105,5 +108,13 @@ public class TaxCalculation {
 
     public  double getAfterTaxIncome() {
         return this.income - getTotalTax();
+    }
+
+    public double getNextYearRrsp() {
+
+        double unusedRrrp = RRSP_LIMIT_2022 - rrspContribution;
+        double nextYearRrsp = Math.min(RRSP_LIMIT_2023,  (unusedRrrp + (income * 18 / 100)));
+
+        return nextYearRrsp;
     }
 }

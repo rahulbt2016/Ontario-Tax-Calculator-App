@@ -101,6 +101,28 @@
             android:layout_height="match_parent" >
 
             <TableRow
+                android:id="@+id/tableRow5"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:padding="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2023 RRSP Limit  :   "
+                    android:textStyle="bold"
+                    android:textSize="20dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/nextYearRrspLimit"
+                    android:text="$"
+                    android:textSize="20dp"/>
+            </TableRow>
+
+            <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -178,7 +200,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="After-tax Incoome:   "
+                    android:text="After-tax Incoome:"
                     android:textStyle="bold"
                     android:textSize="20dp"/>
 
